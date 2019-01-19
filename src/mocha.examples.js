@@ -1,4 +1,5 @@
-suite.skip("Mocha with QUnit interface and expect (separate library) assertions - examples");
+//The opposite of only is "skip"
+suite("Mocha with QUnit interface and expect (separate library) assertions - examples").skip;
 
 test("Passing test", function () {
   expect(true).toBe(true);

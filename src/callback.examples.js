@@ -23,14 +23,13 @@ test("Verbose, hard to reuse, easy to forget, additional error handling mechanis
       return;
     }
 
-    getWeather(null, function (error, weather) {
-      /*
-       if (error) {
-       done(error);
-       return;
-       }
-       */
+    getWeather(null, function (city, weather) {
+      if (error) {
+        done(error);
+        return;
+      }
       console.log("weather", weather);
+      done();
     });
 
     console.log(`Weather for ${city}:`);
@@ -62,7 +61,7 @@ test("Results aren't easily reused", function (done) {
     getWeather(city, (error, weather)=> {
 
       console.log(weather);
-
+      done();
     });
 
   });
